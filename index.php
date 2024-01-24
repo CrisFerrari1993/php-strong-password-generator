@@ -26,8 +26,15 @@
                 <?php
 
                     $userData = $_GET['password'];
-
-                    echo randomPassword($userData);
+                    if($userData === null){
+                        echo'';
+                    } elseif($userData < 8) {
+                        echo '<span class="d-block text-center" style="color : red">La password deve contenere almeno 8 caratteri</span>';
+                    } else {
+                        $_SESSION['password'] = $userData;
+                        header('Location: ./redirec.php');
+                        echo randomPassword($userData);
+                    }
                 ?>
             </div>
         </div>
