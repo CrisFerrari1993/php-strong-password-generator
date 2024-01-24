@@ -12,4 +12,5 @@ function randomPassword($lenght) {
     }
     return implode($newPsw); 
 }
+
 ?>
