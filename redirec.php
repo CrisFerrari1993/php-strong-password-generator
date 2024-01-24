@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="container text-center">
-        <h1 class="my-2 mb-5">Thanks for using our service</h1>
+        <h1 class="my-2 mb-5"><strong>Thanks for using our service</strong></h1>
         <p>Your new Password is: <strong><? echo randomPassword($userData)?></strong></p>
     </div>
 </body>
