@@ -15,8 +15,12 @@
 </head>
 <body>
     <div class="container text-center">
-        <h1 class="my-2 mb-5"><strong>Thanks for using our service</strong></h1>
-        <p>Your new Password is: <strong><?php echo randomPassword($userData)?></strong></p>
+        <div class="row">
+            <div class="col-12">
+                <h1 class="my-2 mb-5"><strong>Thanks for using our service</strong></h1>
+                <p>Your new Password is: <br><strong><?php echo randomPassword($userData)?></strong></p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
