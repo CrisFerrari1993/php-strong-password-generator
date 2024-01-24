@@ -11,12 +11,12 @@
             session_start();
             $userData = $_SESSION['password'];
     ?>
-    <title>Youre password is...</title>
+    <title>Your password is...</title>
 </head>
 <body>
     <div class="container text-center">
         <h1 class="my-2 mb-5">Thanks for using our service</h1>
-        <p>Youre new Password is: <strong><? echo randomPassword($userData)?></strong></p>
+        <p>Your new Password is: <strong><? echo randomPassword($userData)?></strong></p>
     </div>
 </body>
 </html>
