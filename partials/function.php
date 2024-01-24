@@ -1,11 +1,15 @@
 <?php
+
+// Password generator Funtion
+
 function randomPassword($lenght) {
-    if($lenght < 8){
-        return "<span class='d-block text-center' style='color : red'>La password deve contenere almeno 8 caratteri</span>";
-    }
+    // string with numbers, symbols, and carachter
     $alphabetCaracters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*<>?/.-_';
+    // password array
     $newPsw = array();
+    // length of alphabet array
     $alphaLength = strlen($alphabetCaracters) - 1;
+    //for i element of array length push in the array a random carachter taked from string
     for ($i = 0; $i < $lenght ; $i++) {
         $n = rand(0, $alphaLength);
         $newPsw[] = $alphabetCaracters[$n];
