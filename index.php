@@ -6,6 +6,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <?php
 
+        require_once __DIR__ . "/partials/function.php";
+
+        session_start();
+        
     ?>
     <title>Strong Password Generator</title>
 </head>
@@ -19,30 +23,14 @@
                     <input type="number" name= "password">
                     <input type="submit" value='Genera Password'>
                 </form>
+                <?php
+
+                    $userData = $_GET['password'];
+
+                    echo randomPassword($userData);
+                ?>
             </div>
         </div>
     </div>
-    <?php
-
-    $userData = $_GET['password'];
-
-    
-    
-
-    function randomPassword($lenght) {
-        if($lenght <= 8){
-            return "<span class='d-block text-center' style='color : red'>La password deve contenere almeno 8 caratteri</span>";
-        }
-        $alphabetCaracters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*<>?/.-_';
-        $newPsw = array();
-        $alphaLength = strlen($alphabetCaracters) - 1;
-        for ($i = 0; $i < $lenght ; $i++) {
-            $n = rand(0, $alphaLength);
-            $newPsw[] = $alphabetCaracters[$n];
-        }
-        return implode($newPsw); //turn the array into a string
-    }
-
-    ?>
 </body>
 </html>
