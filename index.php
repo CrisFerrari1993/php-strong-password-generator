@@ -27,9 +27,11 @@
 
                     $userData = $_GET['password'];
                     if($userData === null){
-                        echo'';
+                        echo '<span class="d-block text-center mt-2" style="color : black">La password deve contenere fra gli 8 e i 20 caratteri</span>';
                     } elseif($userData < 8) {
-                        echo '<span class="d-block text-center" style="color : red">La password deve contenere almeno 8 caratteri</span>';
+                        echo '<span class="d-block text-center mt-2" style="color : red">La password deve contenere almeno 8 caratteri</span>';
+                    } elseif($userData > 20){
+                        echo '<span class="d-block text-center mt-2" style="color : red">La password è troppo grande </span>';
                     } else {
                         $_SESSION['password'] = $userData;
                         header('Location: ./redirec.php');
